@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0b0b0f;
+  cursor: none;
+}
+
+button {
+  cursor: none;
+}
+
+@layer utilities {
+  @keyframes stripOnce {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
+
+  .animate-stripOnce {
+    animation-name: stripOnce;
+    animation-timing-function: cubic-bezier(
+      0.5,
+      0,
+      0.2,
+      1
+    ); /* Fast start, smooth slow end */
+    animation-fill-mode: forwards;
+  }
+}
