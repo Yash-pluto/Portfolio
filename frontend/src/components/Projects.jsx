@@ -8,7 +8,8 @@ const projects = [
       "A minimal, fast-loading Linktree alternative to showcase portfolios and social handles.",
     tech: ["React", "TailwindCSS"],
     image: "/images/shadowlinks.JPG",
-    link: "https://shadowlinks.vercel.app",
+    linkLive: "https://shadowlinks.vercel.app",
+    linkCode: "https://github.com/Yash-pluto/shadowlinks",
   },
   {
     title: "Portfolio Website",
@@ -16,7 +17,8 @@ const projects = [
       "Developer portfolio with Framer Motion transitions, mobile-first design, and dynamic UI.",
     tech: ["React", "Framer Motion", "TailwindCSS"],
     image: "/images/portfolio.JPG",
-    link: "https://yash-plutoo.vercel.app",
+    linkLive: "https://yash-plutoo.vercel.app",
+    linkCode: "https://github.com/Yash-pluto/Portfolio",
   },
   {
     title: "Solo Leveling Tracker",
@@ -24,7 +26,8 @@ const projects = [
       "Habit + stat tracker with leveling, daily quests, boss battles, and custom titles. Inspired by Solo Leveling.",
     tech: ["React", "MongoDB", "Express", "TailwindCSS"],
     image: "/images/solotracker.png",
-    link: "https://github.com/Yash-pluto/SoloLevelingTracker",
+    linkLive: "https://github.com/Yash-pluto/SoloLevelingTracker",
+    linkCode: "https://github.com/Yash-pluto/SoloLevelingTracker",
   },
   {
     title: "HELLSTORE – E-Commerce Website",
@@ -33,10 +36,18 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
     image: "/images/hellstore.png",
     link: "https://github.com/Yash-pluto/E-Commerce-Website",
+    linkCode: "https://github.com/Yash-pluto/E-Commerce-Website",
   },
 ];
 
-const ProjectCard = ({ title, description, tech, image, link }) => {
+const ProjectCard = ({
+  title,
+  description,
+  tech,
+  image,
+  linkCode,
+  linkLive,
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -45,7 +56,7 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
       viewport={{ once: true }}
       className='bg-[#0e0e0e] border border-[#1f1f1f] rounded-xl p-6 min-w-[340px] sm:min-w-[420px] max-w-[440px] mx-4'
     >
-      <a href={link} target='_blank' rel='noopener noreferrer'>
+      <a href={linkLive} target='_blank' rel='noopener noreferrer'>
         <img
           src={image}
           alt={title}
@@ -66,7 +77,7 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
       </div>
       <div className='flex items-center justify-between'>
         <a
-          href={link}
+          href={linkLive}
           target='_blank'
           rel='noopener noreferrer'
           className='text-sm text-blue-400 underline hover:text-blue-500'
@@ -74,7 +85,7 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
           View Website
         </a>
         <a
-          href={link}
+          href={linkCode}
           target='_blank'
           rel='noopener noreferrer'
           className='text-xs text-gray-300 hover:text-white transition underline'
@@ -173,7 +184,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className='w-full flex justify-center mt-[10rem]'>
+      <div className='w-full flex justify-center mt-[5rem] sm:mt-[10rem]'>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "66%" }}

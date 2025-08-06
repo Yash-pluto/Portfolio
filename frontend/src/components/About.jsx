@@ -44,7 +44,7 @@ const About = () => {
         initial={{ width: 0 }}
         whileInView={{ width: "66%" }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-        className='mt-8 h-px bg-gradient-to-r from-blue-500/10 via-blue-500/70 to-blue-500/10'
+        className='mt-[-7rem] sm:mt-8 h-px bg-gradient-to-r from-blue-500/10 via-blue-500/70 to-blue-500/10'
       />
     </section>
   );

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='w-full border-t border-white text-white py-8 px-6'>
+    <footer className='w-full border-t border-white text-white py-8 px-6 mb-[4rem] sm:mb-0'>
       <div className='max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4'>
         <div className='text-center md:text-left'>
           <h3 className='text-xl font-semibold text-blue-500'>Yash Vardhan</h3>

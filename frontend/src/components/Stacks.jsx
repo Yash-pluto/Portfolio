@@ -31,11 +31,106 @@ const stackCategories = [
         logo: "/logos/js.svg",
         tooltip: "Web Logic & Power – Makes it all come alive ⚡",
       },
+      {
+        name: "React",
+        logo: "/logos/react.svg",
+        tooltip: "Main UI Framework – Used in all major projects ⚛️",
+      },
+      {
+        name: "Tailwind",
+        logo: "/logos/tailwind.svg",
+        tooltip: "Utility-First CSS – Clean, responsive, fast as hell 🌪️",
+      },
+      {
+        name: "HTML5",
+        logo: "/logos/html.svg",
+        tooltip: "Skeleton of the Web – Every project starts here 🧱",
+      },
+      {
+        name: "CSS3",
+        logo: "/logos/css.svg",
+        tooltip: "Style Game Strong – Animations, grids, and drip 🎨",
+      },
+      {
+        name: "JavaScript",
+        logo: "/logos/js.svg",
+        tooltip: "Web Logic & Power – Makes it all come alive ⚡",
+      },
+      {
+        name: "React",
+        logo: "/logos/react.svg",
+        tooltip: "Main UI Framework – Used in all major projects ⚛️",
+      },
+      {
+        name: "Tailwind",
+        logo: "/logos/tailwind.svg",
+        tooltip: "Utility-First CSS – Clean, responsive, fast as hell 🌪️",
+      },
+      {
+        name: "HTML5",
+        logo: "/logos/html.svg",
+        tooltip: "Skeleton of the Web – Every project starts here 🧱",
+      },
+      {
+        name: "CSS3",
+        logo: "/logos/css.svg",
+        tooltip: "Style Game Strong – Animations, grids, and drip 🎨",
+      },
+      {
+        name: "JavaScript",
+        logo: "/logos/js.svg",
+        tooltip: "Web Logic & Power – Makes it all come alive ⚡",
+      },
     ],
   },
   {
     title: "Backend",
     techs: [
+      {
+        name: "Node.js",
+        logo: "/logos/node.svg",
+        tooltip: "JavaScript Runtime – Backend beast with V8 engine 🚀",
+      },
+      {
+        name: "Express",
+        logo: "/logos/express.svg",
+        tooltip: "Minimal & Fast – Routing, APIs, and middleware 🔥",
+      },
+      {
+        name: "MongoDB",
+        logo: "/logos/mongo.svg",
+        tooltip: "NoSQL King – Flexible, JSON-based, cloud-ready 📦",
+      },
+      {
+        name: "Node.js",
+        logo: "/logos/node.svg",
+        tooltip: "JavaScript Runtime – Backend beast with V8 engine 🚀",
+      },
+      {
+        name: "Express",
+        logo: "/logos/express.svg",
+        tooltip: "Minimal & Fast – Routing, APIs, and middleware 🔥",
+      },
+      {
+        name: "MongoDB",
+        logo: "/logos/mongo.svg",
+        tooltip: "NoSQL King – Flexible, JSON-based, cloud-ready 📦",
+      },
+      {
+        name: "Node.js",
+        logo: "/logos/node.svg",
+        tooltip: "JavaScript Runtime – Backend beast with V8 engine 🚀",
+      },
+      {
+        name: "Express",
+        logo: "/logos/express.svg",
+        tooltip: "Minimal & Fast – Routing, APIs, and middleware 🔥",
+      },
+      {
+        name: "MongoDB",
+        logo: "/logos/mongo.svg",
+        tooltip: "NoSQL King – Flexible, JSON-based, cloud-ready 📦",
+      },
       {
         name: "Node.js",
         logo: "/logos/node.svg",
@@ -66,6 +161,47 @@ const stackCategories = [
         logo: "/logos/github.svg",
         tooltip: "Version Control – Every line of code backed up 💾",
       },
+      {
+        name: "Framer",
+        logo: "/logos/framer.svg",
+        tooltip: "Framer Motion – Smooth animations, clean transitions 🎞️",
+      },
+      {
+        name: "GitHub",
+        logo: "/logos/github.svg",
+        tooltip: "Version Control – Every line of code backed up 💾",
+      },
+      {
+        name: "Framer",
+        logo: "/logos/framer.svg",
+        tooltip: "Framer Motion – Smooth animations, clean transitions 🎞️",
+      },
+      {
+        name: "GitHub",
+        logo: "/logos/github.svg",
+        tooltip: "Version Control – Every line of code backed up 💾",
+      },
+      {
+        name: "Framer",
+        logo: "/logos/framer.svg",
+        tooltip: "Framer Motion – Smooth animations, clean transitions 🎞️",
+      },
+      {
+        name: "GitHub",
+        logo: "/logos/github.svg",
+        tooltip: "Version Control – Every line of code backed up 💾",
+      },
+
+      {
+        name: "Framer",
+        logo: "/logos/framer.svg",
+        tooltip: "Framer Motion – Smooth animations, clean transitions 🎞️",
+      },
+      {
+        name: "GitHub",
+        logo: "/logos/github.svg",
+        tooltip: "Version Control – Every line of code backed up 💾",
+      },
     ],
   },
 ];
@@ -74,7 +210,7 @@ const Stacks = () => {
   return (
     <section
       id='stack'
-      className='scroll-mt-[10rem] scroll-smooth relative bg-black py-20 px-6 w-full  overflow-hidden mb-10'
+      className='scroll-mt-[10rem] mt-[-10rem] sm:mt-[5rem] scroll-smooth relative bg-black py-20 px-6 w-full overflow-hidden mb-10'
     >
       <div className='relative z-10 max-w-screen-xl mx-auto'>
         <h2 className='text-3xl md:text-5xl font-bold text-white mb-[4rem] text-center'>
@@ -85,12 +221,15 @@ const Stacks = () => {
           {stackCategories.map((category, idx) => (
             <div
               key={idx}
-              className='flex flex-row items-center justify-start gap-8 md:gap-16'
+              className='flex flex-col md:flex-row items-center md:items-start md:justify-center gap-4 md:gap-16 w-full'
             >
-              <h3 className='text-xl md:text-2xl font-semibold text-white min-w-[120px]'>
+              {/* Title on top for mobile, left for desktop */}
+              <h3 className='text-xl md:text-2xl font-semibold text-white min-w-[120px] text-center'>
                 {category.title}
               </h3>
-              <div className='relative w-[300px] overflow-hidden'>
+
+              {/* Infinite scroll logos */}
+              <div className='relative w-full md:w-[300px] overflow-hidden'>
                 <motion.div
                   className='flex w-max gap-6'
                   initial={{ x: 0 }}
