@@ -163,7 +163,10 @@ const Projects = () => {
   };
 
   return (
-    <section id='projects' className='bg-black px-4 pt-8 pb-[40rem]'>
+    <section
+      id='projects'
+      className='scroll-mt-[10rem] bg-black px-4 pt-8 mb-[10rem] '
+    >
       <div className='max-w-screen-xl mx-auto'>
         <h1 className='text-4xl font-semibold text-white text-center mb-2'>
           Projects
@@ -185,6 +188,14 @@ const Projects = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className='w-full flex justify-center mt-[10rem]'>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "66%" }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          className='mt-8 h-px bg-gradient-to-r from-blue-500/10 via-blue-500/70 to-blue-500/10'
+        />
       </div>
     </section>
   );

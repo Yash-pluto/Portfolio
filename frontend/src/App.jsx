@@ -4,6 +4,7 @@ import FallingStrips from "./components/FallingStrips.jsx";
 import Hero from "./components/Hero.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Projects from "./components/Projects.jsx";
+import Stacks from "./components/Stacks.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Stacks />
     </div>
   );
 }
