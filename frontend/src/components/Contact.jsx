@@ -14,16 +14,11 @@ const Contact = () => {
       id='contact'
       className='relative w-full py-24 px-6 text-white flex flex-col items-center justify-center text-center overflow-hidden z-0'
     >
-      {/* GRID BACKGROUND */}
       <div className='pointer-events-none absolute inset-0 z-0'>
         <div className='w-full h-full bg-[linear-gradient(to_right,#FFFF_2px,transparent_1px),linear-gradient(to_bottom,#FFFF_2px,transparent_1px)] bg-[size:38px_38px]' />
       </div>
-
-      {/* FADE OVERLAYS */}
       <div className='pointer-events-none absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-black via-black/90 via-10% to-transparent z-10' />
       <div className='pointer-events-none absolute top-0 left-0 right-0 h-[60vh] bg-gradient-to-b from-black via-black/90 via-50% to-transparent z-10' />
-
-      {/* CONTACT CONTENT */}
       <div className='relative z-20'>
         <h2 className='text-3xl md:text-4xl font-bold text-blue-500'>
           Contact Me

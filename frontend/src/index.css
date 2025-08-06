@@ -57,7 +57,7 @@ button {
 
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     transition: all 0.3s ease-in-out;
-    border-radius: 0rem; /* No rounding */
+    border-radius: 0rem;
     transition: transform 0.3s ease-in-out;
   }
 
@@ -123,14 +123,13 @@ button {
 
   .noselect {
     user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   .nodrag {
     pointer-events: none;
-    -webkit-user-drag: none; /* Safari/Chrome */
-    user-drag: none;
+    -webkit-user-drag: none;
   }
 }
