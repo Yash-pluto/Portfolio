@@ -60,7 +60,7 @@ const FallingStrips = () => {
   }, []);
 
   return (
-    <div className='absolute inset-0 z-[-3] pointer-events-none '>
+    <div className='absolute inset-0 z-[1] pointer-events-none overflow-hidden'>
       {strips.map((strip) => (
         <div
           key={strip.id}
