@@ -15,6 +15,11 @@ export default {
         grid: "40px 40px",
       },
     },
+    fontFamily: {
+      rajdhani: ['"Rajdhani"', "sans-serif"],
+      orbitron: ['"Orbitron"', "sans-serif"],
+      grotesk: ['"Space Grotesk"', "sans-serif"],
+    },
   },
   plugins: [],
 };

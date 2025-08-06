@@ -18,7 +18,7 @@ body,
 }
 
 body {
-  background-color: #0b0b0f;
+  background: #0f0f0f;
   cursor: none;
 }
 
@@ -27,6 +27,23 @@ button {
 }
 
 @layer utilities {
+  .glass-navbar {
+    background-image: linear-gradient(
+      144deg,
+      rgba(238, 237, 242, 0.003),
+      hsla(0, 0%, 100%, 0) 43%
+    );
+
+    background-color: rgba(15, 15, 15, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease-in-out;
+    border-radius: 0rem; /* No rounding */
+    transition: transform 0.3s ease-in-out;
+  }
+
   @keyframes stripOnce {
     0% {
       transform: translateY(0);
@@ -52,5 +69,43 @@ button {
       1
     ); /* Fast start, smooth slow end */
     animation-fill-mode: forwards;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.7s ease-out forwards;
+  }
+
+  .nav-icon {
+    @apply flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 bg-zinc-800 hover:bg-blue-600 hover:shadow-[0_0_15px_#3b82f6] relative;
+  }
+
+  .tooltip {
+    @apply absolute z-[999] left-12 top-1/2 -translate-y-1/2 bg-zinc-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap;
+    pointer-events: none;
   }
 }
