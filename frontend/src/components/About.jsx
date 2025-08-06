@@ -16,7 +16,7 @@ const About = () => {
   return (
     <section
       id='about'
-      className='w-full min-h-[full] mb-[8rem] px-6 flex flex-col items-center text-center z-[10]'
+      className='scroll-mt-[10rem] w-full min-h-screen mb-[-15rem] px-6 flex flex-col items-center text-center z-[10]'
     >
       {/* 🔹 Badge - Animate this ONLY */}
       <motion.p

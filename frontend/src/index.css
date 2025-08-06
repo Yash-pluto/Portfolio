@@ -15,6 +15,7 @@ body,
   z-index: 0;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,6 +42,10 @@ button {
       hsla(0, 0%, 100%, 0) 43%
     );
 
+    .mask-image-bg-gradientPluto {
+      mask-image: linear-gradient(to bottom, #0ea5e9, #ec4899);
+      -webkit-mask-image: linear-gradient(to bottom, #0ea5e9, #ec4899);
+    }
     background-color: rgba(15, 15, 15, 0.5);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
