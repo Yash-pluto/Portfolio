@@ -1,56 +1,98 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const Hero = () => {
+  const heroRef = useRef(null);
+  const isInView = useInView(heroRef, { once: false, margin: "-20% 0px" });
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <>
-      <div className='fixed inset-0 z-[-4] pointer-events-none bg-[#08090a]'>
+      {/* 🔥 Components */}
+      <div className='fixed inset-0 z-[-1] pointer-events-none '>
         {/* Grid Lines */}
-        <div className='absolute inset-0 bg-[linear-gradient(to_right,_#131d41_2px,_transparent_1px),_linear-gradient(to_bottom,_#131d41_2px,_transparent_1px)] bg-[size:38px_38px] opacity-100' />
+        <div className='absolute inset-0 bg-[linear-gradient(to_right,_#142772_2px,_transparent_1px),_linear-gradient(to_bottom,_#142772_2px,_transparent_1px)] bg-[size:38px_38px] opacity-100' />
       </div>
-      <div className='z-[1]'>
-        {/* Bottom fade */}
-        <div className='absolute z-[-2] bottom-0 left-0 w-full h-[40vh] bg-gradient-to-t from-black via-black to-transparent' />
-      </div>
-      <section className='min-h-screen z-[10] flex flex-col justify-start items-center text-center px-6 pt-[135px]'>
+      <section
+        ref={heroRef}
+        id='hero'
+        className='min-h-screen flex flex-col justify-center items-center text-center px-6 pt-[120px] pb-[100px] relative z-10 '
+      >
+        {/* 🔺 Top Fade */}
+        <div className='pointer-events-none absolute top-0 left-0 right-0 h-[60vh] bg-gradient-to-b from-black to-transparent z-[-1]' />
+
         {/* 🔹 Badge */}
-        <p className='relative z-10 mb-4 inline-block rounded-full border border-zinc-700 bg-zinc-900/20 px-3 py-1.5 text-xs text-zinc-50 md:mb-0 md:text-sm shadow-[0_1px_0px_rgba(255,255,255,1)] before:absolute before:inset-0 before:-z-10 before:rounded-full before:blur-md before:bg-cyan-400/10'>
+        <motion.p
+          variants={fadeUp}
+          initial={{ opacity: 0, y: -20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+          className='relative z-10 mb-4 inline-block rounded-full border border-zinc-700  px-4 py-2 text-sm text-zinc-50 md:text-base shadow-[0_1px_1px_rgba(255,255,255,0.9)] before:absolute before:inset-0 before:-z-10 before:rounded-full before:blur-md '
+        >
           Full Stack Developer 💻
-        </p>
+        </motion.p>
 
         {/* 🔱 Headline */}
-        <h1 className='mb-3 text-center text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-8xl lg:leading-tight'>
+        <motion.h1
+          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+          className='mb-4 text-center text-4xl font-bold leading-tight text-zinc-50 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight drop-shadow-lg'
+        >
           Yash Vardhan
           <br />
-          Full-Stack Dev.
-        </h1>
+          <span className='text-blue-500'>Full-Stack Dev</span>
+        </motion.h1>
 
         {/* ✍️ Subtext */}
-        <p className='mb-9 max-w-2xl text-center text-base text-zinc-400 sm:text-lg md:text-xl'>
-          Currently building impactful full-stack apps with React & MongoDB.
-          Fueled by obsession, driven by execution, and focused on delivering
-          value through clean code & real-world projects.
-        </p>
+        <motion.p
+          variants={fadeUp}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+          className='mb-10 max-w-2xl text-center text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed'
+        >
+          Crafting scalable full-stack apps with React & MongoDB. I don't code
+          for fun - I code for domination. 💻⚔️
+        </motion.p>
 
         {/* 🎯 CTA Buttons */}
-        <div className='flex gap-4 flex-col sm:flex-row flex-wrap justify-center'>
-          <div className='group p-[2px] rounded-lg border border-blue-700 transition-all duration-200 hover:border-transparent'>
+        <motion.div
+          variants={fadeUp}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
+          className='flex gap-4 flex-col sm:flex-row flex-wrap justify-center'
+        >
+          {/* Resume Button with sexy blue border wrap */}
+          <div className='flex justify-center border-2 border-blue-500 p-1 rounded-xl hover:border-none transition-all duration-200'>
             <a
               href='/YashResume.pdf'
               target='_blank'
               rel='noopener noreferrer'
-              className='bg-blue-600 text-white font-semibold px-6 py-3 rounded-md block transition-all duration-200 hover:bg-blue-700 hover:shadow-lg hover:scale-105'
+              className=' bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:shadow-lg hover:scale-105'
             >
               Download Resume
             </a>
           </div>
 
+          {/* GitHub Button */}
           <a
             href='https://github.com/Yash-pluto'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-white border border-white/20 px-6 py-3 rounded-md hover:bg-white/5 transition-all duration-200 hover:scale-105'
+            className='border border-white/20 text-white px-6 py-3 rounded-md hover:bg-white/5 transition-all duration-200 hover:scale-105'
           >
             My GitHub
           </a>
-        </div>
+        </motion.div>
+
+        {/* 🔻 Bottom Fade */}
+        <div className='pointer-events-none absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-black to-transparent z-[-1]' />
       </section>
     </>
   );

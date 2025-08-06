@@ -32,13 +32,13 @@ const Navbar = () => {
           fixed top-0 left-0 h-screen w-[75px] z-50 flex flex-col items-center justify-between 
           py-6 px-2 transition-transform duration-300
          text-white
-          shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+
           backdrop-blur-[1px]
           bg-[linear-gradient(144deg,_rgba(238,237,242,0.1),_hsla(0,0%,100%,0)_1%)]
           
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0 md:flex md:flex-row md:items-center md:justify-between 
-          md:h-[75px] md:w-full md:px-10 md:py-0 md:gap-6
+          md:h-[75px]  md:w-full md:px-10 md:py-0 md:gap-6
         `}
       >
         {/* 🔥 Logo / Initials */}
