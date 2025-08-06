@@ -3,13 +3,20 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "HELLSTORE – E-Commerce Website",
+    title: "ShadowLinks",
     description:
-      "Full-stack MERN e-commerce store featuring Admin & Customer dashboards, dynamic cart, purchase history, and secure checkout.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-    image: "/images/hellstore.png",
-    trailer: "https://www.youtube.com/embed/project1",
-    link: "https://github.com/Yash-pluto/E-Commerce-Website",
+      "A minimal, fast-loading Linktree alternative to showcase portfolios and social handles.",
+    tech: ["React", "TailwindCSS"],
+    image: "/images/shadowlinks.JPG",
+    link: "https://shadowlinks.vercel.app",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "Developer portfolio with Framer Motion transitions, mobile-first design, and dynamic UI.",
+    tech: ["React", "Framer Motion", "TailwindCSS"],
+    image: "/images/portfolio.JPG",
+    link: "https://yash-plutoo.vercel.app",
   },
   {
     title: "Solo Leveling Tracker",
@@ -17,32 +24,19 @@ const projects = [
       "Habit + stat tracker with leveling, daily quests, boss battles, and custom titles. Inspired by Solo Leveling.",
     tech: ["React", "MongoDB", "Express", "TailwindCSS"],
     image: "/images/solotracker.png",
-    trailer: "https://www.youtube.com/embed/project2",
     link: "https://github.com/Yash-pluto/SoloLevelingTracker",
   },
   {
-    title: "Portfolio Website",
+    title: "HELLSTORE – E-Commerce Website",
     description:
-      "Developer portfolio with Framer Motion transitions, mobile-first design, and dynamic UI.",
-    tech: ["React", "Framer Motion", "TailwindCSS"],
-    image: "/images/portfolio.png",
-    trailer: "https://www.youtube.com/embed/project3",
-    link: "https://github.com/Yash-pluto/Portfolio",
-  },
-  {
-    title: "ShadowLinks",
-    description:
-      "A minimal, fast-loading Linktree alternative to showcase portfolios and social handles.",
-    tech: ["React", "TailwindCSS"],
-    image: "/images/shadowlinks.png",
-    trailer: "https://www.youtube.com/embed/project4",
-    link: "https://github.com/Yash-pluto/shadowlinks",
+      "Full-stack MERN e-commerce store featuring Admin & Customer dashboards, dynamic cart, purchase history, and secure checkout.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    image: "/images/hellstore.png",
+    link: "https://github.com/Yash-pluto/E-Commerce-Website",
   },
 ];
 
-const ProjectCard = ({ title, description, tech, image, trailer, link }) => {
-  const [showVideo, setShowVideo] = useState(false);
-
+const ProjectCard = ({ title, description, tech, image, link }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -51,11 +45,13 @@ const ProjectCard = ({ title, description, tech, image, trailer, link }) => {
       viewport={{ once: true }}
       className='bg-[#0e0e0e] border border-[#1f1f1f] rounded-xl p-6 min-w-[340px] sm:min-w-[420px] max-w-[440px] mx-4'
     >
-      <img
-        src={image}
-        alt={title}
-        className='rounded-md w-full h-56 object-cover mb-5 border border-[#222]'
-      />
+      <a href={link} target='_blank' rel='noopener noreferrer'>
+        <img
+          src={image}
+          alt={title}
+          className='rounded-md w-full h-56 object-cover mb-5 border border-[#222] hover:opacity-90 transition duration-300 cursor-pointer'
+        />
+      </a>
       <h2 className='text-xl font-semibold text-white mb-2'>{title}</h2>
       <p className='text-sm text-gray-400 mb-4'>{description}</p>
       <div className='flex flex-wrap gap-2 mb-5'>
@@ -75,27 +71,17 @@ const ProjectCard = ({ title, description, tech, image, trailer, link }) => {
           rel='noopener noreferrer'
           className='text-sm text-blue-400 underline hover:text-blue-500'
         >
+          View Website
+        </a>
+        <a
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-xs text-gray-300 hover:text-white transition underline'
+        >
           View Code
         </a>
-        <button
-          onClick={() => setShowVideo(!showVideo)}
-          className='text-xs text-gray-300 hover:text-white transition'
-        >
-          {showVideo ? "Hide Trailer" : "Show Trailer"}
-        </button>
       </div>
-      {showVideo && (
-        <div className='mt-4'>
-          <iframe
-            className='w-full h-64 rounded-md'
-            src={trailer}
-            title={`${title} Trailer`}
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
     </motion.div>
   );
 };
@@ -113,8 +99,6 @@ const Projects = () => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
-  // PC: Touch-drag horizontal scroll
   useEffect(() => {
     const container = containerRef.current;
     if (!container || isMobile) return;

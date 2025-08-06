@@ -36,7 +36,7 @@ const CustomCursor = () => {
         circle.style.left = `${circle.x - 10}px`;
         circle.style.top = `${circle.y - 10}px`;
         circle.style.opacity = (1 - index / circles.length).toFixed(2);
-        circle.style.backgroundColor = colors[index % colors.length] + "CC"; // CC = ~80% opacity in hex
+        circle.style.backgroundColor = colors[index % colors.length] + "CC";
         const scale = 1 - index * 0.04;
         circle.style.transform = `scale(${scale})`;
 

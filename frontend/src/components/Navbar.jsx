@@ -25,20 +25,17 @@ const Navbar = () => {
   const handleNavClick = (e, id) => {
     e.preventDefault();
     scrollToSection(id);
-    setIsOpen(false); // closes sidebar on mobile
+    setIsOpen(false);
   };
 
   return (
     <>
-      {/* 🍔 Hamburger */}
       <button
         className='md:hidden fixed top-4 right-4 z-[9999] text-white text-3xl'
         onClick={toggleNavbar}
       >
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
-
-      {/* 🧊 Navbar */}
       <nav
         className={`
           fixed top-0 left-0 h-screen w-[75px] z-50 flex flex-col items-center justify-between 
@@ -50,12 +47,9 @@ const Navbar = () => {
           md:h-[75px] md:w-full md:px-10 md:py-0 md:gap-6
         `}
       >
-        {/* 🔥 Logo */}
         <div className='text-4xl font-bold text-white tracking-widest animate-fadeIn'>
           YV
         </div>
-
-        {/* 🌐 Nav Icons */}
         <ul className='flex flex-col md:flex-row gap-8 text-white text-xl'>
           <li className='group relative'>
             <a
@@ -130,8 +124,6 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-
-        {/* 🔻 Label */}
         <div className='text-xs font-bold text-zinc-500 rotate-90 tracking-widest'>
           NAV
         </div>
