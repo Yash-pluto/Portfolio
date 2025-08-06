@@ -112,7 +112,7 @@ const Stacks = () => {
                   {[...category.techs, ...category.techs].map((tech, index) => (
                     <motion.div
                       key={index}
-                      className='group flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-md min-w-max hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-shadow duration-300'
+                      className='group flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-md min-w-max transition-shadow duration-300'
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
