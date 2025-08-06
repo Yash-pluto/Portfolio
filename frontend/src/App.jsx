@@ -6,7 +6,8 @@ import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <div className='overflow-x-hidden h-screen relative  min-h-screen w-full text-white antialiased'>
+    <div className='overflow-x-hidden h-screen relative min-h-screen w-full text-white antialiased bg-black'>
+      {/* 🔥 Components */}
       <CustomCursor />
       <FallingStrips />
       <Navbar />

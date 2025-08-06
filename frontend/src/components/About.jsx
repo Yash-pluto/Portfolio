@@ -1,4 +1,3 @@
-// src/components/About.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -13,30 +12,13 @@ const stackItems = [
   "Framer Motion",
 ];
 
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-
 const About = () => {
   return (
-    <motion.section
+    <section
       id='about'
-      className='w-full min-h-screen px-6 py-20 flex flex-col items-center text-center z-[10] bg-black'
-      initial={{ opacity: 0, y: -60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: true }}
+      className='w-full min-h-screen px-6 py-20 flex flex-col items-center text-center z-[10]'
     >
-      {/* 🔹 Badge */}
+      {/* 🔹 Badge - Animate this ONLY */}
       <motion.p
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -46,69 +28,34 @@ const About = () => {
         About Me
       </motion.p>
 
-      {/* 🔱 Headline */}
-      <motion.h2
-        variants={fadeUpVariant}
-        initial='hidden'
-        whileInView='visible'
-        custom={1}
-        className='text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-100 leading-tight mb-6'
-      >
+      {/* 🔱 Headline - Static */}
+      <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-100 leading-tight mb-6'>
         Who is Yash Vardhan?
-      </motion.h2>
+      </h2>
 
-      {/* 📜 Paragraph */}
-      <motion.p
-        variants={fadeUpVariant}
-        initial='hidden'
-        whileInView='visible'
-        custom={2}
-        className='max-w-3xl text-zinc-400 text-base md:text-lg lg:text-xl mb-10 leading-relaxed'
-      >
+      {/* 📜 Paragraph - Static */}
+      <p className='max-w-3xl text-zinc-400 text-base md:text-lg lg:text-xl mb-10 leading-relaxed'>
         I'm a Full-Stack Developer crafting high-performance apps with React,
-        Node.js, and MongoDB. I blend functionality with elegance, designing
-        modern UI that solves real-world problems while maintaining performance,
-        responsiveness, and style.
-      </motion.p>
+        ExpressJS, Node.js, and MongoDB. I blend functionality with elegance,
+        designing modern UI that solves real-world problems while maintaining
+        performance, responsiveness, and style.
+      </p>
 
-      {/* 🧠 Tech Stack Grid */}
+      {/* 🎯 Signature - Static */}
+      <p className='mt-12 italic text-zinc-500 max-w-2xl text-sm md:text-base'>
+        "I engineer systems with intent, not noise. Every function serves a
+        purpose, every line moves with clarity. I don't chase trends. I
+        architect solutions built to last."
+      </p>
+
+      {/* 💠 Line Divider - Optional Animation */}
       <motion.div
-        variants={fadeUpVariant}
-        initial='hidden'
-        whileInView='visible'
-        custom={3}
-        className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-white'
-      >
-        {stackItems.map((tech, index) => (
-          <motion.span
-            key={tech}
-            className='bg-zinc-800 px-4 py-2 rounded-lg'
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              delay: 0.5 + index * 0.1,
-              duration: 0.3,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
-          >
-            {tech}
-          </motion.span>
-        ))}
-      </motion.div>
-
-      {/* 🎯 Signature Mission */}
-      <motion.p
-        variants={fadeUpVariant}
-        initial='hidden'
-        whileInView='visible'
-        custom={4}
-        className='mt-12 italic text-zinc-500 max-w-2xl text-sm md:text-base'
-      >
-        "Code is my language. Execution is my obsession. I'm not here to play —
-        I'm here to build with precision and impact."
-      </motion.p>
-    </motion.section>
+        initial={{ width: 0 }}
+        whileInView={{ width: "66%" }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+        className='mt-20 h-px bg-gradient-to-r from-blue-500/10 via-blue-500/70 to-blue-500/10'
+      />
+    </section>
   );
 };
 
