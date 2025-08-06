@@ -5,9 +5,9 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: screen; /* or screen */
+  mix-blend-mode: screen;
   backdrop-filter: blur(7px);
-  filter: blur(2px); /* this right here softens the flame */
+  filter: blur(2px);
   opacity: 0.6;
   transition: background-color 0.2s ease, opacity 0.2s ease;
 }

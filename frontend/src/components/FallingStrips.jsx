@@ -18,7 +18,7 @@ const FallingStrips = () => {
       else if (spawnZone < 0.75) top = window.innerHeight * 0.4;
       else top = window.innerHeight * 0.6;
 
-      const height = 64 + Math.random() * 69; // Random height between 64px and 69
+      const height = 64 + Math.random() * 69;
       const duration = 2 + Math.random() * 1.5;
 
       return {
@@ -37,17 +37,16 @@ const FallingStrips = () => {
       for (let i = 0; i < count; i++) {
         setTimeout(() => {
           setStrips((prev) => [...prev, generateStrip()]);
-        }, i * 5000); // 5000ms delay between each strip in batch
+        }, i * 5000);
       }
     };
 
-    spawnStrips(); // Initial spawn
+    spawnStrips();
     const spawnInterval = setInterval(spawnStrips, 2500);
 
     return () => clearInterval(spawnInterval);
   }, []);
 
-  // Cleanup old strips after 5s
   useEffect(() => {
     const cleanupInterval = setInterval(() => {
       const now = Date.now();

@@ -12,7 +12,6 @@ const Hero = () => {
   return (
     <>
       <div className='relative'>
-        {/* 🧩 Grid Lines for Hero ONLY */}
         <div className='pointer-events-none absolute inset-0 z-[0] bg-[linear-gradient(to_right,_#142772_2px,_transparent_1px),_linear-gradient(to_bottom,_#142772_2px,_transparent_1px)] bg-[size:38px_38px]' />
 
         <section
@@ -20,10 +19,7 @@ const Hero = () => {
           id='hero'
           className='min-h-screen flex flex-col justify-center items-center text-center px-6 pt-[120px] pb-[100px] relative z-10 '
         >
-          {/* 🔺 Top Fade */}
           <div className='pointer-events-none absolute top-0 left-0 right-0 h-[60vh] bg-gradient-to-b from-black to-transparent z-[-1]' />
-
-          {/* 🔹 Badge */}
           <motion.p
             variants={fadeUp}
             initial={{ opacity: 0, y: -20 }}
@@ -33,8 +29,6 @@ const Hero = () => {
           >
             Full Stack Developer 💻
           </motion.p>
-
-          {/* 🔱 Headline */}
           <motion.h1
             variants={fadeUp}
             initial={{ opacity: 0, y: 40 }}
@@ -46,8 +40,6 @@ const Hero = () => {
             <br />
             <span className='text-blue-500'>Full-Stack Dev</span>
           </motion.h1>
-
-          {/* ✍️ Subtext */}
           <motion.p
             variants={fadeUp}
             initial={{ opacity: 0, y: 20 }}
@@ -58,8 +50,6 @@ const Hero = () => {
             Crafting scalable full-stack apps with React & MongoDB. I don't code
             for fun - I code for domination. 💻⚔️
           </motion.p>
-
-          {/* 🎯 CTA Buttons */}
           <motion.div
             variants={fadeUp}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -67,7 +57,6 @@ const Hero = () => {
             transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
             className='flex gap-4 flex-col sm:flex-row flex-wrap justify-center'
           >
-            {/* Resume Button with sexy blue border wrap */}
             <div className='flex justify-center border-2 border-blue-500 p-1 rounded-xl hover:border-none transition-all duration-200'>
               <a
                 href='/YashResume.pdf'
@@ -78,8 +67,6 @@ const Hero = () => {
                 Download Resume
               </a>
             </div>
-
-            {/* GitHub Button */}
             <a
               href='https://github.com/Yash-pluto'
               target='_blank'
@@ -89,8 +76,6 @@ const Hero = () => {
               My GitHub
             </a>
           </motion.div>
-
-          {/* 🔻 Bottom Fade */}
           <div className='pointer-events-none absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-black to-transparent z-[-1]' />
         </section>
       </div>

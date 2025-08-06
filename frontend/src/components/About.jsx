@@ -18,7 +18,6 @@ const About = () => {
       id='about'
       className='scroll-mt-[10rem] w-full min-h-screen mb-[-15rem] px-6 flex flex-col items-center text-center z-[10]'
     >
-      {/* 🔹 Badge - Animate this ONLY */}
       <motion.p
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -27,28 +26,20 @@ const About = () => {
       >
         About Me
       </motion.p>
-
-      {/* 🔱 Headline - Static */}
       <h2 className='text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-100 leading-tight mb-6'>
         Who is Yash Vardhan?
       </h2>
-
-      {/* 📜 Paragraph - Static */}
       <p className='max-w-3xl text-zinc-400 text-base md:text-lg lg:text-xl leading-relaxed'>
         I'm a Full-Stack Developer crafting high-performance apps with React,
         ExpressJS, Node.js, and MongoDB. I blend functionality with elegance,
         designing modern UI that solves real-world problems while maintaining
         performance, responsiveness, and style.
       </p>
-
-      {/* 🎯 Signature - Static */}
       <p className='mt-12 mb-[10rem] italic text-zinc-500 max-w-2xl text-sm md:text-base'>
         "I engineer systems with intent, not noise. Every function serves a
         purpose, every line moves with clarity. I don't chase trends. I
         architect solutions built to last."
       </p>
-
-      {/* 💠 Line Divider - Optional Animation */}
       <motion.div
         initial={{ width: 0 }}
         whileInView={{ width: "66%" }}

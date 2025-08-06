@@ -21,6 +21,11 @@ body,
 body {
   background: black;
   cursor: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 button {
@@ -32,8 +37,8 @@ button {
     display: none;
   }
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .glass-navbar {
     background-image: linear-gradient(
@@ -52,7 +57,7 @@ button {
 
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     transition: all 0.3s ease-in-out;
-    border-radius: 0rem; /* No rounding */
+    border-radius: 0rem;
     transition: transform 0.3s ease-in-out;
   }
 
@@ -74,12 +79,7 @@ button {
 
   .animate-stripOnce {
     animation-name: stripOnce;
-    animation-timing-function: cubic-bezier(
-      0.5,
-      0,
-      0.2,
-      1
-    ); /* Fast start, smooth slow end */
+    animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
     animation-fill-mode: forwards;
   }
   @keyframes slideIn {
@@ -119,5 +119,17 @@ button {
   .tooltip {
     @apply absolute z-[999] left-12 top-1/2 -translate-y-1/2 bg-zinc-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap;
     pointer-events: none;
+  }
+
+  .noselect {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .nodrag {
+    pointer-events: none;
+    -webkit-user-drag: none;
   }
 }
