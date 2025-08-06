@@ -1,18 +1,17 @@
+import About from "./components/About.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 import FallingStrips from "./components/FallingStrips.jsx";
 import Hero from "./components/Hero.jsx";
-import InfiniteScroll from "./components/InfiniteScroll.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <div className='relative h-full min-h-screen overflow-hidden text-white antialiased'>
-      {/* 🔥 Components */}
+    <div className='overflow-x-hidden h-screen relative  min-h-screen w-full text-white antialiased'>
       <CustomCursor />
       <FallingStrips />
       <Navbar />
       <Hero />
-      <InfiniteScroll />
+      <About />
     </div>
   );
 }
