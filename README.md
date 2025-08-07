@@ -5,7 +5,7 @@ This is my **personal portfolio** built using modern full-stack practices, inspi
 
 ## 🚀 Live Preview
 
-[**🔗 View Live Site**](https://yash-plutoo.vercel.app) 
+[**🔗 View Live Site**](https://yashpluto.vercel.app) 
 
 ---
 
