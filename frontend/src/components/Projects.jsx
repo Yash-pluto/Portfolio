@@ -17,7 +17,7 @@ const projects = [
       "Developer portfolio with Framer Motion transitions, mobile-first design, and dynamic UI.",
     tech: ["React", "Framer Motion", "TailwindCSS"],
     image: "/images/portfolio.JPG",
-    linkLive: "https://yash-plutoo.vercel.app",
+    linkLive: "https://yashpluto.vercel.app",
     linkCode: "https://github.com/Yash-pluto/Portfolio",
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Habit + stat tracker with leveling, daily quests, boss battles, and custom titles. Inspired by Solo Leveling.",
     tech: ["React", "MongoDB", "Express", "TailwindCSS"],
-    image: "/images/solotracker.png",
+    image: "/images/workinprogress.png",
     linkLive: "https://github.com/Yash-pluto/SoloLevelingTracker",
     linkCode: "https://github.com/Yash-pluto/SoloLevelingTracker",
   },
@@ -34,7 +34,7 @@ const projects = [
     description:
       "Full-stack MERN e-commerce store featuring Admin & Customer dashboards, dynamic cart, purchase history, and secure checkout.",
     tech: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
-    image: "/images/hellstore.png",
+    image: "/images/workinprogress.png",
     link: "https://github.com/Yash-pluto/E-Commerce-Website",
     linkCode: "https://github.com/Yash-pluto/E-Commerce-Website",
   },
